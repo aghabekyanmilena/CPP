@@ -12,7 +12,7 @@ private:
 	std::string nickname;
 	std::string phonenumber;
 	std::string darkestsecret;
-	int index;
+	// int index;
 public:
 	// setter to set the data
 	void	setfirstname(const std::string &value);
