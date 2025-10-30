@@ -1,7 +1,13 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(const std::string &name) : name(name) {}
-HumanB::~HumanB() {}
+HumanB::HumanB(const std::string &name) : name(name)
+{
+	std::cout<<name<<" was created"<<std::endl;
+}
+HumanB::~HumanB()
+{
+	std::cout<<name<<" was destroyed"<<std::endl;
+}
 
 void HumanB::setWeapon(Weapon &weapon)
 {
