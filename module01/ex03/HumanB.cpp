@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(const std::string &name) : name(name)
+HumanB::HumanB(const std::string &name) : name(name), weapon(NULL)
 {
 	std::cout<<name<<" was created"<<std::endl;
 }
