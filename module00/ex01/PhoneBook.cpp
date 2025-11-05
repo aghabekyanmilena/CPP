@@ -23,36 +23,36 @@ void PhoneBook::displayContact(int index) const {
 void PhoneBook::addcontact()
 {
 	Contact newContact;
-	std::string input;	
+	std::string input;
 	std::cout << "First name: ";
 	std::getline(std::cin, input);
 	if (input.empty())
 		return;
-	newContact.setfirstname(input);	
+	newContact.setfirstname(input);
 	std::cout << "Last name: ";
 	std::getline(std::cin, input);
 	if (input.empty())
 		return;
-	newContact.setlastname(input);	
+	newContact.setlastname(input);
 	std::cout << "Nickname: ";
 	std::getline(std::cin, input);
 	if (input.empty())
 		return;
-	newContact.setnickname(input);	
+	newContact.setnickname(input);
 	std::cout << "Phone number: ";
 	std::getline(std::cin, input);
 	if (input.empty())
 		return;
-	newContact.setphonenumber(input);	
+	newContact.setphonenumber(input);
 	std::cout << "Darkest secret: ";
 	std::getline(std::cin, input);
-	if (input.empty()) 
+	if (input.empty())
 		return;
-	newContact.setdarkestsecret(input);	
-	contacts[oldindex] = newContact;	
+	newContact.setdarkestsecret(input);
+	contacts[oldindex] = newContact;
 	if (contactCount < 8)
 		contactCount++;
-	oldindex = (oldindex + 1) % 8;	
+	oldindex = (oldindex + 1) % 8;
 	std::cout << "Contact added\n";
 }
 
