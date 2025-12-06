@@ -9,7 +9,6 @@ DiamondTrap::DiamondTrap()
 	energy_point = 50;
 	attack_damage = 30;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
-
 }
 
 DiamondTrap::DiamondTrap(std::string name)
