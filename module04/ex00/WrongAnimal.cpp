@@ -6,6 +6,12 @@ WrongAnimal::WrongAnimal()
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
+WrongAnimal::WrongAnimal(const std::string &type)
+{
+	this->type = type;
+	std::cout << "WrongAnimal parametrilazed constructor called" << std::endl;
+}
+
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
 	this->type = other.type;
