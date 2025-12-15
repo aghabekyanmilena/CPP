@@ -18,7 +18,8 @@ Cat &Cat::operator=(const Cat &other)
 	if (this != &other)
 	{
 		this->type = other.getType();
-		*brain = *other.brain;
+		delete brain;
+		brain = new Brain(*other.brain);
 	}
 	return *this;
 }

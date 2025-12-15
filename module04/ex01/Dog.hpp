@@ -11,8 +11,8 @@ public:
 	Dog();
 	Dog(const Dog &other);
 	Dog &operator=(const Dog &other);
-	virtual ~Dog();
+	~Dog();
 
 	const Brain *getBrain() const;
-	virtual void makeSound() const;
+	void makeSound() const;
 };
