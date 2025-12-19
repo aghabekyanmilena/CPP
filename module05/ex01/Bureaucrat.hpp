@@ -1,6 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <exception>
+
+class Form;
 
 class Bureaucrat
 {
@@ -15,6 +18,9 @@ public:
 	Bureaucrat &operator=(const Bureaucrat &other);
 	~Bureaucrat();
 
+	// sign form
+	void signForm(Form &form);
+
 	// getters
 	std::string getName() const;
 	int getGrade() const;
@@ -28,11 +34,13 @@ public:
 		public:
 			const char *what() const throw();
 	};
-	class GradeTooLowhException : public std::exception {
+	class GradeTooLowException : public std::exception {
 		public:
 			const char *what() const throw();
 	};
 };
+
+#include "Form.hpp"
 
 // operator <<
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &buro);
