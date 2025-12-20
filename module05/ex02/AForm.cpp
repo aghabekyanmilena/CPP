@@ -1,12 +1,12 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : name("Form"),
+AForm::AForm() : name("Form"),
 	is_signed(false), gradeToSign(150), gradeToExecute(150)
 {
 	std::cout << "Form default constructor called" << std::endl;
 }
 
-Form::Form(const std::string name, int gradeToSign, int gradeToExecute)
+AForm::AForm(const std::string name, int gradeToSign, int gradeToExecute)
 	: name(name), is_signed(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	std::cout << "Form parametrized constructor called" << std::endl;
@@ -16,13 +16,13 @@ Form::Form(const std::string name, int gradeToSign, int gradeToExecute)
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form &other)
+AForm::AForm(const AForm &other)
 	: name(other.name), is_signed(other.is_signed), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
 {
 	std::cout << "Form copy constructor called" << std::endl;
 }
 
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(const AForm &other)
 {
 	std::cout << "Form copy assignment operator" << std::endl;
 	if (this != &other)
@@ -30,18 +30,18 @@ Form &Form::operator=(const Form &other)
 	return *this;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << "Form destructor called" << std::endl;
 }
 
 // getters
-std::string Form::getName() const { return this->name; }
-bool Form::isSigned() const { return this->is_signed; }
-int Form::getGradeToExecute() const { return this->gradeToExecute; }
-int Form::getGradeToSign() const { return this->gradeToSign; }
+std::string AForm::getName() const { return this->name; }
+bool AForm::isSigned() const { return this->is_signed; }
+int AForm::getGradeToExecute() const { return this->gradeToExecute; }
+int AForm::getGradeToSign() const { return this->gradeToSign; }
 
-void Form::beSigned(const Bureaucrat &buro)
+void AForm::beSigned(const Bureaucrat &buro)
 {
 	if (buro.getGrade() > gradeToSign)
 	{
@@ -62,7 +62,7 @@ const char *Form::GradeTooLowException::what() const throw()
 	return "Form: Grade too low";
 }
 
-std::ostream &operator<<(std::ostream &os, const Form &f)
+std::ostream &operator<<(std::ostream &os, const AForm &f)
 {
 	os << "Form " << f.getName()
 		<< " [signed: " << (f.isSigned() ? "yes" : "no")
