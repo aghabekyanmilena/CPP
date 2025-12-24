@@ -2,27 +2,57 @@
 
 int main()
 {
-	try
 	{
-		Bureaucrat burik1("Burik", 2);
-		std::cout << burik1 << std::endl;
-		burik1.incrementGrade();
-		std::cout << burik1 << std::endl;
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-	std::cout << "========================" << std::endl;
-	try
-	{
-		Bureaucrat burik2("Buro", 150);
-		burik2.decrementGrade();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		Bureaucrat b;
+		Bureaucrat bu("Burik", 148);
+
+		try
+		{
+			b.incrementGrade();
+			b.incrementGrade();
+			b.incrementGrade();
+			b.incrementGrade();
+			std::cout << b.getGrade() << std::endl;
+			std::cout << b.getName() << std::endl;
+		}
+		catch(std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+
+		try
+		{
+			bu.decrementGrade();
+			bu.decrementGrade();
+			std::cout << bu.getGrade() << std::endl;
+			bu.decrementGrade();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 
-	return 0;
+	{
+		try {
+			Bureaucrat alpha("Burik", 0);
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+
+		try {
+			Bureaucrat beta("Burik", 155);
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+		try {
+			Bureaucrat delta("Burik", 1);
+			delta.incrementGrade();
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+	}
 }
